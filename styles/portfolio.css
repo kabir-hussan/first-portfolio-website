@@ -28,6 +28,9 @@ nav {
 .text-primary {
     color: #FD6E0A;
 }
+nav ul> .menu-bar{
+    display: none;
+}
 
 nav>ul {
     display: flex;
@@ -77,10 +80,9 @@ nav a {
 }
 
 .banner-content {
-    /* there has na problem for width */
     max-width: 600px;
+    text-align: center;
 }
-
 .banner .profile-pic {
     width: 500px;
 }
@@ -113,23 +115,19 @@ main {
     margin: 0 auto;
 }
 
-main section {
-    margin-top: 130px;
-}
 
 /* about secton styles */
 
 .about {
-    padding: 130px;
+    padding: 70px;
     border-radius: 10px;
     background-color: #FFF8F3;
-    margin: 130px 0;
+    margin: 10px 0px;
 }
 
 .section-description {
-    color: #757575;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .about-info-container {
@@ -139,6 +137,7 @@ main section {
 
 .about-info {
     text-align: center;
+    color: #757575;
 }
 
 /* Wahat i do section styles */
@@ -150,10 +149,11 @@ main section {
 /* sill related styles */
 
 .skills-container {
-    display: flex;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-
-
+    
 }
 
 .skill {
@@ -162,6 +162,7 @@ main section {
     background-color: #FFF;
     /* box-shadow: 0px 6px 50px 0px rgba(0, 0, 0, 0.06); */
     box-shadow: 0px 6px 50px 0px rgba(139, 155, 46, 0.534);
+    text-align: center;
 }
 
 .skill-description {
@@ -169,29 +170,38 @@ main section {
 }
 
 /* resume related styles */
+.resume-section{
+    margin-top: 100px;
+}
 
 .resume-column-title {
-    color: #474747;
     font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 30px;
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-align: center;
 }
 
 .resume-container {
     display: flex;
     gap: 50px;
 }
+.resume-item{
+    text-align: center;
+    padding: 0px 10px;
+    border: 1px solid lemonchiffon;
+    border-radius: 5px;
+}
 
 .resume-item-title {
-    color: #474747;
-    font-size: 25px;
+    /* color: #474747; */
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .resume-item-institute {
     color: #757575;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
     margin-top: 0px;
@@ -206,23 +216,28 @@ main section {
     margin: 10px;
 }
 
-.download-cv {
+.read-more-cv {
     text-align: center;
     margin-top: 50px;
 }
 
 /* footer-styles */
 
-footer {
+.footer-section {
     display: flex;
+    flex-direction: row-reverse;
     background-color: #FFF8F3;
-    padding: 130px 200px;
-    margin-top: 100px;
+    padding: 10px 200px;
+    margin-top: 50px;
     gap: 100px;
 }
 
 .footer-column {
     width: 50%;
+}
+.social-links {
+    padding-top: 80px;
+    text-align: center;
 }
 
 .social-links a{
@@ -239,57 +254,89 @@ footer {
 .footer-column-description {
     color: #474747;
     font-size: 16px;
+    padding-top: 50px;
+    text-align: center;
 }
 
 /* contact form */
+.contact-form{
+    text-align: center;
+}
 
 .contact-form input[type="text"], .contact-form input[type="email"],
 textarea {
     display: block;
-    margin-bottom: 24px;
     color: #757575;
     padding: 18px 30px;
     border-radius: 5px;
     background: #FFF;
     border: 0;
     width: 100%;
-
 }
 
+#footer-submit-btn{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 12px;
+}
 /* added responsiveness */ 
-/* .hide{
-    display: none;
-} */
-
 /* smaller device */
 @media screen and (max-width:576px) {
 
-    .header {
+.header {
         background-image: none;
     }
-    
-    #what-i-do-description {
-        padding: 15px 50px;
-        text-align: justify;
+.btn-primary {
+        padding: 10px 60px;
     }
-    .banner{
+    
+#what-i-do-description {
+        padding: 15px 50px;
+        text-align: center;
+    }
+.banner{
         padding:30px 0px;
         margin: 20px;
     }
-    .banner .profile-pic {
+.banner-greeting {
+        font-size: 30px;
+    }
+
+.banner-heading {
+        font-size: 65px;
+    }
+.banner .profile-pic {
         width: 100%;
     }
+.section-description {
+        font-size: 15px;
+}
+
     
-    .skills-container, .resume-container, footer,.banner, nav , nav>ul{
+.skills-container, .resume-container, nav , nav>ul{
     display: flex;
-    flex-direction: column;
-   
+    flex-direction: column; 
+}
+.banner{
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
 nav ul{
     gap: 15px;
 }
 
-footer, .about{
+h4.info-title {
+    font-size: 16px;
+}
+.footer-section {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px 200px;
+    gap: 30px;
+}
+
+.footer-section, .about{
     padding:10px;
     text-align: center;
 }
@@ -297,15 +344,15 @@ footer, .about{
     width: 100%;
 }
 
+
 .contact-form input[type="text"], .contact-form input[type="email"],
 textarea {
     width: 80%;
-
 }
+
 .about-info-container {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    
 }
 
 }
